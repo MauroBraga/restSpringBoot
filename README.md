@@ -18,4 +18,7 @@ Boas Práticas de Api
 - Limite de Campos
 - Selecione a Tecnologia Adequada
 
+Anotations
 
+- RequestParam -> O campo não é obrigatório e pode ter valor default
+- PathVariable -> O campo é obrigatório.	
