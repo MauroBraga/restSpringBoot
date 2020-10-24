@@ -22,3 +22,4 @@ Anotations
 
 - RequestParam -> O campo não é obrigatório e pode ter valor default
 - PathVariable -> O campo é obrigatório.	
+- @Service -> serve para poder injetar a classe sem precisar da um new nela
