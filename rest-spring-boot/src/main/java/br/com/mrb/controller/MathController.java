@@ -22,7 +22,7 @@ public class MathController {
 			throw new UnsuportedMathOperationExcpetion("Please set a numeric value");
 		
 		
-		return math.sum(NumberConverter.convertToDouble(numberOne), NumberConverter.convertToDouble(numberTwo));;
+		return math.sum(NumberConverter.convertToDouble(numberOne), NumberConverter.convertToDouble(numberTwo));
 		
 	}
 	
@@ -45,7 +45,7 @@ public class MathController {
 		if(! NumberConverter.isNumeric(numberOne) || ! NumberConverter.isNumeric(numberTwo))
 			throw new UnsuportedMathOperationExcpetion("Please set a numeric value");
 		
-		eturn math.multiplication(NumberConverter.convertToDouble(numberOne), NumberConverter.convertToDouble(numberTwo));
+		return math.multiplication(NumberConverter.convertToDouble(numberOne), NumberConverter.convertToDouble(numberTwo));
 		
 	}
 	
