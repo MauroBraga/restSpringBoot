@@ -1,64 +1,41 @@
 package br.com.mrb.services;
 
-import java.util.ArrayList;
 import java.util.List;
-import java.util.concurrent.atomic.AtomicLong;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import br.com.mrb.exception.ResourceNotFoundExcpetion;
 import br.com.mrb.model.Person;
+import br.com.mrb.repository.PersonRepository;
 
 @Service
 public class PersonServices {
 	
-	private final AtomicLong couter = new AtomicLong();
+	@Autowired
+	private PersonRepository repository;
 	
 	public Person create(Person person) {
-		person.setId(couter.incrementAndGet());
-		return person;
+		return repository.save(person);
 	}
 	
 	public Person update(Person person) {
-		return person;
+		return repository.save(person); 
 	}
 	
 	
-	public void delete(String id) {
-	
+	public void delete(Long id) {
+		Person entity =repository.findById(id).orElseThrow(() -> new ResourceNotFoundExcpetion("Not Records found for this ID"));
+		repository.delete(entity);
 	}
 	
-	public Person findById(String id) {
-		Person person = new Person();
-		person.setId(couter.incrementAndGet());
-		person.setFirstName("Mauro");
-		person.setLastName("Braga");
-		person.setAddress("Rua Araguaia");
-		person.setGender("Male");
-		return person; 
+	public Person findById(Long id) {
+		return repository.findById(id).orElseThrow(() -> new ResourceNotFoundExcpetion("Not Records found for this ID")); 
 	}
 	
 	
 	public List<Person> findAll() {
-		
-		List<Person> lista = new ArrayList<>();
-		
-		for(int i =0; i < 10; i++) {
-			Person person = mockPerson(i);
-			lista.add(person);
-		}
-		
-		return lista; 
-	}
-
-
-	private Person mockPerson(int i) {
-		Person person = new Person();
-		person.setId(couter.incrementAndGet());
-		person.setFirstName("First Name "+i);
-		person.setLastName("Last Name"+i);
-		person.setAddress("Address"+i);
-		person.setGender("Male");
-		return person; 
+		return repository.findAll(); 
 	}
 	
 	
