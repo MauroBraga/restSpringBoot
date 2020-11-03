@@ -1,10 +1,10 @@
 Manifest-Version: 1.0
-Built-By: mauro
-Build-Jdk: 14.0.2
 Implementation-Title: rest-spring-boot
 Implementation-Version: 0.0.1-SNAPSHOT
+Built-By: mauro
 Implementation-Vendor-Id: br.com.mrb
-Implementation-URL: https://projects.spring.io/spring-boot/#/spring-boot
- -starter-parent/rest-spring-boot
+Build-Jdk: 1.8.0_201
+Implementation-URL: https://projects.spring.io/spring-boot/#/spring-bo
+ ot-starter-parent/rest-spring-boot
 Created-By: Maven Integration for Eclipse
 

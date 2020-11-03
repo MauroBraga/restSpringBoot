@@ -1,8 +1,8 @@
-package br.com.mrb.model;
+package br.com.mrb.data.model.vo;
 
 import java.io.Serializable;
 
-public class Person implements Serializable{
+public class PersonVO implements Serializable{
 
 	private static final long serialVersionUID = 6784068513118611983L;
 	
@@ -13,7 +13,7 @@ public class Person implements Serializable{
 	private String address;
 	private String gender;
 	
-	public Person() {}
+	public PersonVO() {}
 
 	public Long getId() {
 		return id;
@@ -75,7 +75,7 @@ public class Person implements Serializable{
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Person other = (Person) obj;
+		PersonVO other = (PersonVO) obj;
 		if (address == null) {
 			if (other.address != null)
 				return false;
