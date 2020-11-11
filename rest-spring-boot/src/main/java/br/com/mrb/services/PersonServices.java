@@ -7,8 +7,10 @@ import org.springframework.data.rest.webmvc.ResourceNotFoundException;
 import org.springframework.stereotype.Service;
 
 import br.com.mrb.converter.DozerConverter;
+import br.com.mrb.converter.custom.PersonConverter;
 import br.com.mrb.data.model.Person;
 import br.com.mrb.data.model.vo.PersonVO;
+import br.com.mrb.data.model.vo.v2.PersonVOV2;
 import br.com.mrb.repository.PersonRepository;
 
 @Service
@@ -17,12 +19,21 @@ public class PersonServices {
 	@Autowired
 	PersonRepository repository;
 	
+	@Autowired
+	PersonConverter personConverter;
+	
 	public PersonVO create (PersonVO person) {
 		var entity = DozerConverter.parseObject(person, Person.class);
 		var vo = DozerConverter.parseObject(repository.save(entity), PersonVO.class);
 		return vo;
 	}
 
+	public PersonVOV2 createv2 (PersonVOV2 person) {
+		var entity = personConverter.convertVOToEntity(person);
+		var vo = personConverter.convertEntityToVO(repository.save(entity));
+		return vo;
+	}
+	
 	public List<PersonVO> findAll() {
 		return DozerConverter.parseListObjects(repository.findAll(), PersonVO.class);
 	}
