@@ -9,7 +9,7 @@ import org.junit.Test;
 import br.com.mrb.converter.DozerConverter;
 import br.com.mrb.converters.mocks.MockPerson;
 import br.com.mrb.data.model.Person;
-import br.com.mrb.data.model.vo.PersonVO;
+import br.com.mrb.data.model.vo.v1.PersonVO;
 
 public class DozerConverterTest {
 

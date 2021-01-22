@@ -13,12 +13,12 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.com.mrb.data.model.vo.PersonVO;
+import br.com.mrb.data.model.vo.v1.PersonVO;
 import br.com.mrb.data.model.vo.v2.PersonVOV2;
 import br.com.mrb.services.PersonServices;
 
 @RestController
-@RequestMapping("/person")
+@RequestMapping("/api/person/v1")
 public class PersonController {
 
 	@Autowired
