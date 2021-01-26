@@ -19,10 +19,17 @@ public class WebConfig implements WebMvcConfigurer{
 //			.mediaType("json", MediaType.APPLICATION_JSON)
 //			.mediaType("xml", MediaType.APPLICATION_XML);
 		
+//		configurer.favorPathExtension(false)
+//		.favorParameter(true)
+//		.parameterName("mediaType")
+//		.ignoreAcceptHeader(true)
+//		.useRegisteredExtensionsOnly(false)
+//		.defaultContentType(MediaType.APPLICATION_JSON)
+//		.mediaType("json", MediaType.APPLICATION_JSON)
+
 		configurer.favorPathExtension(false)
-		.favorParameter(true)
-		.parameterName("mediaType")
-		.ignoreAcceptHeader(true)
+		.favorParameter(false)
+		.ignoreAcceptHeader(false)
 		.useRegisteredExtensionsOnly(false)
 		.defaultContentType(MediaType.APPLICATION_JSON)
 		.mediaType("json", MediaType.APPLICATION_JSON)
